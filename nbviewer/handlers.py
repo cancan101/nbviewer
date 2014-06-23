@@ -515,6 +515,7 @@ class URLHandler(RenderingHandler):
             query = None
         
         remote_url = u"{}://{}".format(proto, quote(url))
+        remote_url = remote_url.replace("%3A", ":")
         if query:
             remote_url = remote_url + '?' + query
         if not url.endswith('.ipynb'):
